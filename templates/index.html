@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!--    bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!--    css style -->
+    <link href="{{url_for('static',filename = 'styles.css')}}" rel="stylesheet">
+    <title>my movies</title>
+</head>
+<body>
+<h1>My Top 20 movies</h1>
+<div class="row row-cols-1 row-cols-md-6 g-4">
+    {% for movie in all_movies%}
+    <div class="col">
+        <div class="card h-100">
+            <img src="{{movie.img_url}}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{movie.title}}</h5>
+                <h6>Year:{{movie.year_made}} Rank:{{movie.ranking}}</h6>
+                <div class="btn-config">
+                    <a href="{{url_for('edit_rank',id=movie.id)}}"><button type="button" class="btn btn-outline-primary" typeof="submit">Edit</button></a>
+                    <a href="{{url_for('delete', id = movie.id)}}"><button type="submit" class="btn btn-outline-danger">Delete</button></a>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+    {%endfor%}
+</div>
+
+</body>
+</html>

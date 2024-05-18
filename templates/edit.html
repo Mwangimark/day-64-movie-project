@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!--    css style -->
+    <link href="{{url_for('static',filename = 'edit.css')}}" rel="stylesheet">
+
+    <title>Edit rank</title>
+</head>
+<body>
+
+<div class="form_contents">
+    <form action="{{url_for('edit_rank', id = movie_selected.id)}}" method="post">
+        <h4>Title :{{movie_selected.title}}</h4>
+        <h6>Current Rank:{{movie_selected.ranking}}</h6>
+        <label>Rank to be:</label>
+        <input type="text" name="rank">
+        <button type="submit" class="btn btn-secondary btn-sm">Small button</button>
+
+    </form>
+
+</div>
+
+
+</body>
+</html>

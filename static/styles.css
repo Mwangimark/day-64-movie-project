@@ -1,0 +1,11 @@
+.card-body{
+  padding:0px;
+  margin-bottom:0px;
+  align-content
+}
+.btn-config{
+   display:grid;
+   grid-template-columns:auto auto;
+   gap: 30px;
+   padding:10px;
+}
